@@ -17,8 +17,11 @@ var io = require('socket.io').listen(server);
 // antes instanciar o require para a varioável io para poder utilizar/acessar abaixo
 
 io.on('connection', function(socket){
-
     console.log('Usuário conectou')
+
+    socket.on('disconnect', function(){
+        console.log('Usuário desconectou')
+    })
 
 });
 
