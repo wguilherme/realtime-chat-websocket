@@ -10,4 +10,15 @@ var server = app.listen(80, function (){
 //importa o socket.io e passa onde irá escutar (server)
 // inteligência para:
 //receber tanto requisições http / websocket sejam recebidas e interpretadas
-require('socket.io').listen(server);
+
+var io = require('socket.io').listen(server);
+
+//criar a conexão por websocket
+// antes instanciar o require para a varioável io para poder utilizar/acessar abaixo
+
+io.on('connection', function(socket){
+
+    console.log('Usuário conectou')
+
+});
+
