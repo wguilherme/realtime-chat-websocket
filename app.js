@@ -13,6 +13,9 @@ var server = app.listen(80, function (){
 
 var io = require('socket.io').listen(server);
 
+//corrigindo escopo de variável para reutilizar io
+app.set('io', io);
+
 //criar a conexão por websocket
 // antes instanciar o require para a varioável io para poder utilizar/acessar abaixo
 

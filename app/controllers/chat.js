@@ -12,6 +12,11 @@ module.exports.iniciaChat = function(application, req, res){
         return;
     }
 
+    application.get('io').emit(
+        'msgParaClient',
+        'Teste'
+        )
+
     console.log(dadosForm);
     res.render('chat');
 }
