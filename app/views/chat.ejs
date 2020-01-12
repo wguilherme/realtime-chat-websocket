@@ -129,8 +129,16 @@
 
 			//escutando emit do controller
 
-			socket.on('msgParaClient', function(data){
-				alert('Requisição WS recebida');
+				socket.on('msgParaCliente', function(data){
+					var html = '';
+
+					html += '<div class="dialogo">';
+						html += '<h4>' + data.apelido + '</h4>';
+						html += '<p>' + data.mensagem + '</p>';
+					html += '</div>';
+
+					$('#dialogos').append(html);
+
 			});
 		</script>
 	</body>
